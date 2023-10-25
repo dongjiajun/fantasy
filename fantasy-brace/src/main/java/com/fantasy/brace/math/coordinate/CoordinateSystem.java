@@ -45,8 +45,9 @@ public interface CoordinateSystem {
 
     /**
      * set bounds of this CoordinateSystem.
+     *
      * @param axis length of axis
      * @return a Boolean which signed execute state of this method
      */
-    boolean setBounds(Integer ...axis);
+    boolean setBounds(Integer... axis);
 }

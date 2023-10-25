@@ -45,13 +45,13 @@ public class CoordinateSystem2D extends AbstractCoordinateSystem {
     }
 
     @Override
-    protected boolean validateCoordinateType(Coordinate coordinate) {
+    protected boolean validateType(Coordinate coordinate) {
         return coordinate instanceof Coordinate2D;
     }
 
     @Override
     protected boolean validateCoordinate(Coordinate coordinate) {
-        if (validateCoordinateType(coordinate)) {
+        if (validateType(coordinate)) {
             Coordinate2D real = (Coordinate2D) coordinate;
             return real.getX() >= 0 && real.getX() < boundX && real.getY() >= 0 && real.getY() < boundY;
         }
@@ -86,8 +86,8 @@ public class CoordinateSystem2D extends AbstractCoordinateSystem {
     }
 
     @Override
-    public boolean setBounds(Integer ... axis) {
-        if(axis != null && axis.length >= 2){
+    public boolean setBounds(Integer... axis) {
+        if (axis != null && axis.length >= 2) {
             setBoundX(axis[0]);
             setBoundY(axis[1]);
 

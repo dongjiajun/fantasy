@@ -30,7 +30,7 @@ public abstract class AbstractCoordinateSystem implements CoordinateSystem {
      * @param coordinate the coordinate
      * @return a Boolean which signed the conclusion
      */
-    protected abstract boolean validateCoordinateType(Coordinate coordinate);
+    protected abstract boolean validateType(Coordinate coordinate);
 
     /**
      * verify that the current coordinates are legitimate coordinates.
@@ -42,7 +42,7 @@ public abstract class AbstractCoordinateSystem implements CoordinateSystem {
 
     @Override
     public boolean add(Coordinate coordinate) {
-        if (validateCoordinateType(coordinate)) {
+        if (validateType(coordinate)) {
             if (validateCoordinate(coordinate)) {
                 if (!collector.contains(coordinate)) {
                     return collector.add(coordinate);

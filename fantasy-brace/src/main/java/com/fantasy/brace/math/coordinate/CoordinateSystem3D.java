@@ -40,13 +40,13 @@ public class CoordinateSystem3D extends CoordinateSystem2D {
     }
 
     @Override
-    protected boolean validateCoordinateType(Coordinate coordinate) {
+    protected boolean validateType(Coordinate coordinate) {
         return coordinate instanceof Coordinate3D;
     }
 
     @Override
     protected boolean validateCoordinate(Coordinate coordinate) {
-        if (validateCoordinateType(coordinate)) {
+        if (this.validateType(coordinate)) {
             Coordinate3D real = (Coordinate3D) coordinate;
             return real.getX() >= 0
                     && real.getX() < getBoundX()
@@ -89,7 +89,7 @@ public class CoordinateSystem3D extends CoordinateSystem2D {
     public boolean setBounds(Integer... axis) {
         super.setBounds(axis);
 
-        if(axis != null && axis.length >= 3){
+        if (axis != null && axis.length >= 3) {
             setBoundZ(axis[2]);
 
             return true;
