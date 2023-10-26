@@ -1,9 +1,11 @@
-package com.fantasy.brace.common.rules;
+package com.fantasy.brace.network;
+
+import com.fantasy.brace.common.Processing;
 
 import java.net.Socket;
 
 /**
- * 实现此接口的类必须实现通用的连接处理规范
+ * 网络连接处理规范
  *
  * @author DongJiaJun
  */

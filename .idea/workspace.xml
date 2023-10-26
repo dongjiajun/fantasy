@@ -4,31 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="第一次提交">
+    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="初始结构调整">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/ListenerCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/ListenerCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/CoordinateConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/CoordinateConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/StateConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/StateConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusProtocolEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusProtocolEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/Graphic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractNetWorkAccessiblePlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractNetWorkAccessiblePlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractPlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractPlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/TmpTestRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/AccessNodeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/datatype/AccessNodeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/ListenerCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/datatype/ListenerCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/NetworkAccessProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/Processing.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/Processing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/Graphic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractNetWorkAccessiblePlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractNetWorkAccessiblePlat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractPlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractPlat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/basic/NumberConvertUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/NumberConvertUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/NetWorkAccessible.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/NetWorkAccessible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimpleAccessiblePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimplePlatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/client/SimpleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/client/SimpleClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimplePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimplePlatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractAccessiblePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/RoleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/RoleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/organism/AbstractHuman.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/organism/AbstractHuman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/organism/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/organism/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/organism/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/organism/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MapMaxBounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-entity/src/main/java/com/fantasy/entity/constant/MapMaxBounds.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,28 +76,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;active&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Project/fantasy/fantasy-brace/src/main/java/com/fantasy/brace/common/coordinate&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "active",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "D:/Project/fantasy/fantasy-brace/src/main/java/com/fantasy/brace/common/coordinate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Project\fantasy\fantasy-brace\src\main\java\com\fantasy\brace\common\coordinate" />
@@ -130,11 +129,11 @@
       </method>
     </configuration>
     <configuration name="NumberConvertUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fantasy.brace.math.basic.NumberConvertUtils" />
+      <option name="MAIN_CLASS_NAME" value="com.fantasy.brace.math.NumberConvertUtils" />
       <module name="fantasy-brace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fantasy.brace.math.basic.*" />
+          <option name="PATTERN" value="com.fantasy.brace.math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,7 +159,7 @@
       <module name="fantasy-brace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fantasy.brace.common.*" />
+          <option name="PATTERN" value="com.fantasy.brace.network.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -213,7 +212,8 @@
       <workItem from="1697871492119" duration="7107000" />
       <workItem from="1698023313593" duration="13118000" />
       <workItem from="1698107799909" duration="11196000" />
-      <workItem from="1698216242146" duration="9364000" />
+      <workItem from="1698216242146" duration="10076000" />
+      <workItem from="1698280950702" duration="17292000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <option name="closed" value="true" />
@@ -223,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697877837310</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="初始结构调整">
+      <option name="closed" value="true" />
+      <created>1698227371256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698227371256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +262,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次提交" />
+    <MESSAGE value="初始结构调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始结构调整" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

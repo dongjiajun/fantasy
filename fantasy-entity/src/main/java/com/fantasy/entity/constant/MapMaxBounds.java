@@ -1,4 +1,4 @@
-package com.fantasy.core.space;
+package com.fantasy.entity.constant;
 
 /**
  * 边界定义类

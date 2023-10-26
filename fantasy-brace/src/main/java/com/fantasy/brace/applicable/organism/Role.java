@@ -1,19 +1,24 @@
-package com.fantasy.core.organism;
+package com.fantasy.brace.applicable.organism;
 
-import com.fantasy.brace.common.rules.Processing;
 import com.fantasy.brace.math.coordinate.Coordinate3D;
 import com.fantasy.brace.network.NetWorked;
 import com.fantasy.brace.network.client.SimpleClient;
 
 /**
- * 抽象角色类
+ * 角色类
  *
  * @author DongJiaJun
  */
-public abstract class Role implements NetWorked, Processing {
+public abstract class Role implements NetWorked {
 
-    protected SimpleClient suc;
+    /**
+     * 持有一个用于连接到服务器的客户端
+     */
+    protected SimpleClient simpleClient;
 
+    /**
+     * 名称
+     */
     private String name;
 
     /**
@@ -32,11 +37,6 @@ public abstract class Role implements NetWorked, Processing {
     private Coordinate3D coordinates;
 
     /**
-     * 当前所在地区地图的边界大小
-     */
-    private int[] mapBounds;
-
-    /**
      * 所在的地区（地图），同步数据到服务器时要使用
      */
     private String site;
@@ -50,19 +50,11 @@ public abstract class Role implements NetWorked, Processing {
         this.site = site;
     }
 
-    public int[] getMapBounds() {
-        return mapBounds;
-    }
-
-    public void setMapBounds(int[] mapBounds) {
-        this.mapBounds = mapBounds;
-    }
-
     public void setCoordinates(Coordinate3D coordinates) {
         this.coordinates = coordinates;
     }
 
-    public void setCoordinates(int x, int y, int z){
+    public void setCoordinates(int x, int y, int z) {
         this.coordinates = new Coordinate3D(x, y, z);
     }
 
@@ -102,6 +94,20 @@ public abstract class Role implements NetWorked, Processing {
      */
     public void setSpecies(Object obj, int species) {
         this.species = species;
+    }
+
+    @Override
+    public boolean isNetWorkedReady() {
+        return true;
+    }
+
+    @Override
+    public void connectTo(String host, int port) {
+        if (simpleClient == null) {
+            simpleClient = new SimpleClient(host, port);
+        }
+
+        new Thread(simpleClient).start();
     }
 
 

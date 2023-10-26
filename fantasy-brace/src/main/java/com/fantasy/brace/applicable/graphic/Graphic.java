@@ -1,8 +1,8 @@
-package com.fantasy.brace.graphic;
+package com.fantasy.brace.applicable.graphic;
 
 
 import com.fantasy.brace.common.Status;
-import com.fantasy.brace.common.datatype.ListenerCollector;
+import com.fantasy.brace.datatype.ListenerCollector;
 import com.fantasy.brace.listener.ConfigStateListener;
 import com.fantasy.brace.listener.event.FantasyEvent;
 import com.fantasy.brace.listener.listeners.FantasyListener;
@@ -18,14 +18,14 @@ import java.util.HashSet;
 public abstract class Graphic implements ConfigStateListener {
 
     /**
-     * 状态收集器（被监听）
+     * 状态收集器
      */
     private final Status status;
 
     /**
      * 监听器容器
      */
-    private ListenerCollector listenerCollector;
+    private final ListenerCollector listenerCollector;
 
 
     public ListenerCollector getListenerCollector() {
@@ -37,8 +37,19 @@ public abstract class Graphic implements ConfigStateListener {
         listenerCollector = new ListenerCollector();
     }
 
+    public Graphic(Status status) {
+        this.status = status;
+        listenerCollector = new ListenerCollector();
+    }
+
+    public Graphic(Status status, ListenerCollector listenerCollector) {
+        this.status = status;
+        this.listenerCollector = listenerCollector;
+    }
+
     /**
      * 设置全局状态
+     *
      * @param state 一个全局状态
      */
     protected final void setState(Integer state) {
@@ -48,8 +59,9 @@ public abstract class Graphic implements ConfigStateListener {
 
     /**
      * 设置单一协议状态
+     *
      * @param typeName 协议状态名
-     * @param code 该协议状态的某一状态码值
+     * @param code     该协议状态的某一状态码值
      */
     protected final void setState(String typeName, Integer code) {
         status.appendState(typeName, code);
@@ -58,6 +70,7 @@ public abstract class Graphic implements ConfigStateListener {
 
     /**
      * 获取单一协议状态
+     *
      * @param name 协议状态名
      * @return 该协议状态当前状态码值
      */
@@ -67,6 +80,7 @@ public abstract class Graphic implements ConfigStateListener {
 
     /**
      * 获取全局状态描述
+     *
      * @return
      */
     protected String getStateDescription() {
@@ -96,10 +110,6 @@ public abstract class Graphic implements ConfigStateListener {
      * 响应状态改变
      */
     private void fireStateChanged() {
-        if (listenerCollector == null) {
-            return;
-        }
-
         FantasyEvent event = new FantasyEvent(this, "StateListener", getStateDescription());
         notifyListeners(event);
     }

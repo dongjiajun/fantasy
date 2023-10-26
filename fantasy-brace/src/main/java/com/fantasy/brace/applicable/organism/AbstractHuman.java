@@ -1,7 +1,7 @@
-package com.fantasy.core.organism;
+package com.fantasy.brace.applicable.organism;
 
 /**
- * 抽象的人类类
+ * 人类
  *
  * @author DongJiaJun
  */
@@ -18,5 +18,8 @@ public abstract class AbstractHuman extends Role {
         this.humanId = humanId;
     }
 
+    public AbstractHuman(int humanId) {
+        this.humanId = humanId;
+    }
 
 }

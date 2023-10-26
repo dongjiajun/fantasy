@@ -1,7 +1,7 @@
 package com.fantasy.brace.network.server;
 
 
-import com.fantasy.brace.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
 
 import java.io.IOException;
 

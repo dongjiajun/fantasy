@@ -22,6 +22,8 @@ public class MapTest {
         om.allowNetworkAccess(7001);
         if (om.isNetWorkAccessibleReady(7001)) {
             om.openConnection();
+        }else{
+            System.out.println("网络状态检测不通过，无法开启服务器...");
         }
     }
 }

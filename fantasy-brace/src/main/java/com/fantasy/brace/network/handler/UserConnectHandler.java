@@ -1,8 +1,8 @@
 package com.fantasy.brace.network.handler;
 
 
-import com.fantasy.brace.common.rules.NetworkAccessProcessing;
-import com.fantasy.brace.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.network.NetworkAccessProcessing;
+import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
 import com.fantasy.brace.math.coordinate.Coordinate3D;
 import com.fantasy.brace.math.coordinate.CoordinateSystem3D;
 

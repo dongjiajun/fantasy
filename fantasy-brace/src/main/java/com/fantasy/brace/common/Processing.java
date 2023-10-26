@@ -1,4 +1,4 @@
-package com.fantasy.brace.common.rules;
+package com.fantasy.brace.common;
 
 /**
  * 处理的顶级规范接口

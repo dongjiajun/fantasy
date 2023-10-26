@@ -1,14 +1,17 @@
-package com.fantasy.brace.graphic.plat;
+package com.fantasy.brace.applicable.graphic.plat;
 
 
-import com.fantasy.brace.common.datatype.AccessNodeList;
-import com.fantasy.brace.common.rules.NetworkAccessProcessing;
+import com.fantasy.brace.common.Status;
+import com.fantasy.brace.datatype.AccessNodeList;
+import com.fantasy.brace.datatype.ListenerCollector;
+import com.fantasy.brace.network.NetworkAccessProcessing;
 import com.fantasy.brace.constant.StateConstant;
 import com.fantasy.brace.listener.ConfigAccessListener;
 import com.fantasy.brace.listener.event.FantasyEvent;
 import com.fantasy.brace.listener.listeners.AccessListener;
+import com.fantasy.brace.math.coordinate.CoordinateSystem;
 import com.fantasy.brace.network.NetWorkAccessible;
-import com.fantasy.brace.network.SimplePlatServer;
+import com.fantasy.brace.network.server.SimplePlatServer;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -26,18 +29,29 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
     protected AccessNodeList accessNodeList;
 
     /**
-     * 管理连接的服务器(后续版本要改为nio的实现方式),在第二个版本改为用线程池实现的线程来管理我们的创建线程的逻辑
+     * 管理连接的服务器
      */
     protected SimplePlatServer userConnectServer;
 
 
-    /**
-     * 无参构造，初始化连接节点列表
-     */
     public AbstractNetWorkAccessiblePlat() {
         accessNodeList = new AccessNodeList();
     }
 
+    public AbstractNetWorkAccessiblePlat(int port) throws IOException {
+        accessNodeList = new AccessNodeList();
+        userConnectServer = new SimplePlatServer(port, this, this.getClass().getSimpleName());
+    }
+
+    public AbstractNetWorkAccessiblePlat(Status status, CoordinateSystem coordinateSystem, AccessNodeList accessNodeList) {
+        super(status, coordinateSystem);
+        this.accessNodeList = accessNodeList;
+    }
+
+    public AbstractNetWorkAccessiblePlat(Status status, ListenerCollector listenerCollector, CoordinateSystem coordinateSystem, AccessNodeList accessNodeList) {
+        super(status, listenerCollector, coordinateSystem);
+        this.accessNodeList = accessNodeList;
+    }
 
     /**
      * 持有用户表示，添加到连接设备列表
@@ -107,43 +121,35 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
      * @param description 关于本次状态转变的描述
      */
     private void fireAccessNodeChanged(String description) {
-        if (getListenerCollector() == null) {
-            return;
-        }
         FantasyEvent event = new FantasyEvent(this, "AccessListener", description);
         notifyListeners(event);
     }
 
     @Override
-    public synchronized boolean allowNetworkAccess(int port) throws IOException {
+    public synchronized void allowNetworkAccess(int port) throws IOException {
         if (userConnectServer == null) {
-            userConnectServer = new SimplePlatServer(7001, this, this.getClass().getSimpleName());
+            userConnectServer = new SimplePlatServer(port, this, this.getClass().getSimpleName());
             userConnectServer.setClassType(this.getClass().getSimpleName());
+            setState("NETWORK", StateConstant.NETWORK_READY);
         }
-
-        setState("NETWORK", StateConstant.NETWORK_READY);
-
-        return true;
     }
 
     @Override
     public boolean isNetWorkAccessibleReady(int port) {
-        return getCurrentStateCode("NETWORK") == StateConstant.NETWORK_READY;
+        if (userConnectServer != null
+                && userConnectServer.getServerSocket() != null
+                && userConnectServer.getServerSocket().getLocalPort() == userConnectServer.getPort()
+                && userConnectServer.getServerSocket().getLocalPort() == port) {
+            return getCurrentStateCode("NETWORK") == StateConstant.NETWORK_READY;
+        }
+
+        return false;
     }
 
     @Override
     public boolean openConnection() {
-        if (userConnectServer != null
-                && userConnectServer.getServerSocket() != null
-                && userConnectServer.getServerSocket().getLocalPort() == userConnectServer.getPort()) {
-
-            new Thread(userConnectServer).start();
-            return true;
-        } else {
-            // throw new UnsupportedOperationException("校验未通过，当前无法启用服务器并执行连接监听");
-            System.out.println("校验未通过，当前无法启用服务器并执行连接监听,处于离线状态...");
-            return false;
-        }
+        new Thread(userConnectServer).start();
+        return true;
 
     }
 }
