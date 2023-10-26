@@ -18,51 +18,74 @@ import java.util.HashSet;
 public abstract class Graphic implements ConfigStateListener {
 
     /**
-     * 状态收集器
+     * 状态收集器（被监听）
      */
-    private Status status;
+    private final Status status;
 
     /**
-     * 监听器容器，所有类型的监听器都将被收纳在此容器中
+     * 监听器容器
      */
-    protected ListenerCollector listenerCollector;
+    private ListenerCollector listenerCollector;
+
+
+    public ListenerCollector getListenerCollector() {
+        return listenerCollector;
+    }
 
     public Graphic() {
         status = new Status();
         listenerCollector = new ListenerCollector();
     }
 
-    protected void setState(Integer state) {
+    /**
+     * 设置全局状态
+     * @param state 一个全局状态
+     */
+    protected final void setState(Integer state) {
         status.appendState(state);
         fireStateChanged();
     }
 
-    protected void setState(String typeName, Integer code) {
+    /**
+     * 设置单一协议状态
+     * @param typeName 协议状态名
+     * @param code 该协议状态的某一状态码值
+     */
+    protected final void setState(String typeName, Integer code) {
         status.appendState(typeName, code);
         fireStateChanged();
     }
 
-    protected int getState(String name) {
+    /**
+     * 获取单一协议状态
+     * @param name 协议状态名
+     * @return 该协议状态当前状态码值
+     */
+    protected int getCurrentStateCode(String name) {
         return status.getState(name);
     }
 
-    protected String getState() {
+    /**
+     * 获取全局状态描述
+     * @return
+     */
+    protected String getStateDescription() {
         return status.describe();
     }
 
     @Override
-    public void setStateListener(StateListener listener) {
-        HashSet stateListeners = this.listenerCollector.get("StateListener");
+    public final void setStateListener(StateListener listener) {
+        HashSet<FantasyListener> stateListeners = this.listenerCollector.get("StateListener");
         if (stateListeners == null) {
-            stateListeners = new HashSet<StateListener>();
+            stateListeners = new HashSet<>();
             listenerCollector.put("StateListener", stateListeners);
         }
         stateListeners.add(listener);
     }
 
     @Override
-    public void removeStateListener(StateListener listener) {
-        HashSet mapStateListeners = this.listenerCollector.get("StateListener");
+    public final void removeStateListener(StateListener listener) {
+        HashSet<FantasyListener> mapStateListeners = this.listenerCollector.get("StateListener");
         if (mapStateListeners == null) {
             return;
         }
@@ -70,21 +93,21 @@ public abstract class Graphic implements ConfigStateListener {
     }
 
     /**
-     * 响应状态改变，任何状态变动的行为都需要在执行后触发此方法
+     * 响应状态改变
      */
     private void fireStateChanged() {
         if (listenerCollector == null) {
             return;
         }
 
-        FantasyEvent event = new FantasyEvent(this, "StateListener", getState());
+        FantasyEvent event = new FantasyEvent(this, "StateListener", getStateDescription());
         notifyListeners(event);
     }
 
     /**
      * 移除所有监听器
      */
-    protected void removeAllListeners() {
+    protected final void removeAllListeners() {
         if (listenerCollector == null || listenerCollector.isEmpty()) {
             return;
         }
@@ -96,9 +119,8 @@ public abstract class Graphic implements ConfigStateListener {
      *
      * @param event 事件
      */
-    protected void notifyListeners(FantasyEvent event) {
-        HashSet<? extends FantasyListener> affectedListeners = listenerCollector.get(event.getType());
-
+    protected final void notifyListeners(FantasyEvent event) {
+        HashSet<FantasyListener> affectedListeners = listenerCollector.get(event.getType());
         if (affectedListeners == null) {
             return;
         }

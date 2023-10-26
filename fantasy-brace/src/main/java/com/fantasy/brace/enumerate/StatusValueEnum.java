@@ -15,7 +15,7 @@ public enum StatusValueEnum {
 
 
     /**
-     * 状态值，不考虑对协议中其他状态的影响
+     * 状态值
      */
     private final int code;
 

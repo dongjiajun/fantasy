@@ -16,7 +16,7 @@ public interface NetworkAccessProcessing extends Processing {
      * @param socket   用户的连接
      * @return 表示添加是否成功的布尔值
      */
-    boolean addToAccessNodeList(String identity, Socket socket);
+    boolean addIntoAccessList(String identity, Socket socket);
 
     /**
      * 从连接列表中删除用户
@@ -24,7 +24,7 @@ public interface NetworkAccessProcessing extends Processing {
      * @param identity 以 “ip地址+":"+端口号” 组成的身份标识
      * @return 表示移除是否成功的布尔值
      */
-    boolean removeFromAccessNodeList(String identity);
+    boolean removeFromAccessList(String identity);
 
     /**
      * 如果用户存在，更新该用户信息

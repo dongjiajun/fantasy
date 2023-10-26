@@ -19,8 +19,9 @@ public class MapTest {
         om.setAccessListener((FantasyEvent eventObject) -> System.out.println(eventObject.getExtraStatement()));
         om.setStateListener((FantasyEvent eventObject) -> System.out.println(eventObject.getExtraStatement()));
 
-        if (om.isNetWorkAccessibleReady()) {
-            om.allowNetworkAccess(7001);
+        om.allowNetworkAccess(7001);
+        if (om.isNetWorkAccessibleReady(7001)) {
+            om.openConnection();
         }
     }
 }

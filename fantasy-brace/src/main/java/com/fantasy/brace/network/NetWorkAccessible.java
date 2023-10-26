@@ -12,7 +12,7 @@ public interface NetWorkAccessible {
      *
      * @return 表示网络接入状态是否就绪的布尔值
      */
-    boolean isNetWorkAccessibleReady();
+    boolean isNetWorkAccessibleReady(int port);
 
     /**
      * 允许网络接入
@@ -22,5 +22,7 @@ public interface NetWorkAccessible {
      * @throws Exception 抛出的异常类型，在未自定义异常体系前，暂定为顶级异常类型
      */
     boolean allowNetworkAccess(int port) throws Exception;
+
+    boolean openConnection();
 }
 

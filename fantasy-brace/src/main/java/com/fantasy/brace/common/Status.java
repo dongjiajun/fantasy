@@ -4,8 +4,6 @@ import com.fantasy.brace.enumerate.StatusProtocolEnum;
 import com.fantasy.brace.enumerate.StatusValueEnum;
 import com.fantasy.brace.math.basic.NumberConvertUtils;
 
-import java.util.Arrays;
-
 
 /**
  * 一个可配置并自动管理的基于整型数字的状态机
@@ -50,6 +48,11 @@ public class Status {
         }
     }
 
+    /**
+     * 在当前状态基础上追加状态
+     * @param type 协议状态名
+     * @param code 对应的状态码值（单一）
+     */
     public void appendState(String type, Integer code) {
         append(type, code);
     }
@@ -86,16 +89,11 @@ public class Status {
         }
     }
 
-    public static void main(String[] args) {
-        Status status = new Status();
-
-        status.append("NETWORK", StatusValueEnum.NETWORK_READY.getCode());
-        System.out.println(status.describe());
-        status.append("LOAD", StatusValueEnum.LOAD_NO_COMPLETE.getCode());
-        System.out.println(status.describe());
-
-    }
-
+    /**
+     * 根据协议状态名获取当前的状态值
+     * @param name 协议状态名
+     * @return 该协议状态当前的状态码值
+     */
     public int getState(String name) {
         StatusProtocolEnum protocolEnum = StatusProtocolEnum.getItem(name);
 
@@ -136,7 +134,7 @@ public class Status {
     }
 
     /**
-     * 依据当前状态机的数据，列举出所有的状态
+     * 依据当前状态机的数据，给出对当前完整状态的语言描述
      *
      * @return 一段描述当前状态的字符串
      */

@@ -9,7 +9,6 @@ import com.fantasy.brace.math.coordinate.CoordinateSystem3D;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
 /**
  * @author 董佳俊
@@ -17,17 +16,28 @@ import java.util.Arrays;
  * @date 2021/12/5 17:15
  */
 public class UserConnectHandler extends ConnectHandler {
+
+    /**
+     * 套接字
+     */
     private Socket sock;
 
-    private String classType;
+    /**
+     * 接入类的身份标识
+     */
+    private String identification;
 
+    /**
+     * 接入类（只关注网络向的功能定义）
+     */
     private NetworkAccessProcessing networkAccessProcessing;
 
     private AbstractNetWorkAccessiblePlat plat;
 
-    public UserConnectHandler(Socket sock, String classType, NetworkAccessProcessing networkAccessProcessing, AbstractNetWorkAccessiblePlat plat) {
+    public UserConnectHandler(Socket sock, String identification, NetworkAccessProcessing networkAccessProcessing,
+                              AbstractNetWorkAccessiblePlat plat) {
         this.sock = sock;
-        this.classType = classType;
+        this.identification = identification;
         this.networkAccessProcessing = networkAccessProcessing;
         this.plat = plat;
     }
@@ -52,20 +62,20 @@ public class UserConnectHandler extends ConnectHandler {
             } catch (IOException ioe) {
             } finally {
                 System.out.println("用户:(" + sock.getRemoteSocketAddress() + ") 意外终止连接!");
-                networkAccessProcessing.removeFromAccessNodeList(sock.getInetAddress().toString() + ":" + sock.getPort());
+                networkAccessProcessing.removeFromAccessList(sock.getInetAddress().toString() + ":" + sock.getPort());
             }
             return;
 
         }
         sock.close();
         System.out.println("用户:(" + sock.getRemoteSocketAddress() + ") 已离开");
-        networkAccessProcessing.removeFromAccessNodeList(sock.getInetAddress().toString() + ":" + sock.getPort());
+        networkAccessProcessing.removeFromAccessList(sock.getInetAddress().toString() + ":" + sock.getPort());
     }
 
     private void handle(InputStream input, OutputStream output) throws IOException {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output, StandardCharsets.UTF_8));
         BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
-        writer.write("已进入(" + (classType == null ? "未知区域" : classType) + ")，请选择你的操作：\n");
+        writer.write("已进入(" + (identification == null ? "未知区域" : identification) + ")，请选择你的操作：\n");
         writer.flush();
         for (; ; ) {
             String s = reader.readLine();

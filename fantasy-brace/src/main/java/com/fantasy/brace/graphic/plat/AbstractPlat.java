@@ -1,7 +1,6 @@
 package com.fantasy.brace.graphic.plat;
 
 
-import com.fantasy.brace.common.rules.Processing;
 import com.fantasy.brace.math.coordinate.CoordinateSystem;
 import com.fantasy.brace.math.coordinate.CoordinateSystem3D;
 import com.fantasy.brace.graphic.Graphic;
@@ -24,6 +23,7 @@ public abstract class AbstractPlat extends Graphic {
     public AbstractPlat() {
         this.coordinateSystem = new CoordinateSystem3D();
     }
+
 
     /**
      * 获取坐标系实例

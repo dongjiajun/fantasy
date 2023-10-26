@@ -27,6 +27,7 @@ public class SimpleClient implements Runnable {
      */
     private final int serverPort;
 
+
     public SimpleClient(String serverHost, int serverPort) {
         this.serverHost = serverHost;
         this.serverPort = serverPort;

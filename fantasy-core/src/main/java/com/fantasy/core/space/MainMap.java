@@ -2,27 +2,20 @@ package com.fantasy.core.space;
 
 
 import com.fantasy.brace.constant.StateConstant;
-import com.fantasy.brace.listener.ConfigAccessListener;
 import com.fantasy.brace.common.TmpTestRule;
-import com.fantasy.brace.listener.listeners.AccessListener;
-import com.fantasy.brace.listener.event.FantasyEvent;
-import com.fantasy.brace.listener.listeners.FantasyListener;
 import com.fantasy.brace.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.listener.event.FantasyEvent;
 import com.fantasy.brace.message.Message;
-import com.fantasy.brace.network.SimpleAccessiblePlatServer;
 
-import java.io.IOException;
 import java.util.Collection;
-import java.util.EventListener;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * 主世界地图1
  *
  * @author DongJiaJun
  */
-public class MainMap extends AbstractNetWorkAccessiblePlat implements ConfigAccessListener, TmpTestRule {
+public class MainMap extends AbstractNetWorkAccessiblePlat implements TmpTestRule {
 
     private static MainMap mainMap;
 
@@ -35,17 +28,17 @@ public class MainMap extends AbstractNetWorkAccessiblePlat implements ConfigAcce
     private MainMap() {
         //即便都知道不显式调用也会默认调用父类无参构造，但显式注明可增加代码可读性
         super();
-        setState("NETWORK", StateConstant.NETWORK_READY);
+        // 初始化资源的时候还没有注册监听器，先注册临时的监听器用于监听初始化和创建资源阶段的信息
+        this.setStateListener((FantasyEvent eventObject) -> System.out.println(eventObject.getExtraStatement()));
         if (initPlat()) {
             setState("LOAD", StateConstant.LOAD_COMPLETE);
             System.out.println("主世界地图MainMap已生成......");
         } else {
-
-            // TODO: 2021/12/21 后续换成自定义的异常在上层捕获做处理
-
             System.out.println("主世界地图MainMap初始化失败，资源加载异常...");
             System.exit(1);
         }
+        // 释放临时使用的所有监听器
+        this.removeAllListeners();
 
 
     }
@@ -87,42 +80,6 @@ public class MainMap extends AbstractNetWorkAccessiblePlat implements ConfigAcce
         // TODO: 2021/12/12 此处需要考虑的逻辑极其复杂，在一些相关的前置条件没有做好前，不做具体实现
 
         return false;
-    }
-
-    @Override
-    public void setAccessListener(AccessListener listener) {
-        HashSet accessListeners = this.listenerCollector.get("AccessListener");
-        if (accessListeners == null) {
-            accessListeners = new HashSet<AccessListener>();
-            listenerCollector.put("AccessListener", accessListeners);
-        }
-        accessListeners.add(listener);
-    }
-
-    @Override
-    public void removeAccessListener(AccessListener listener) {
-        HashSet userConnectListeners = this.listenerCollector.get("AccessListener");
-        if (userConnectListeners == null) {
-            return;
-        }
-        listenerCollector.remove("AccessListener");
-    }
-
-    @Override
-    public boolean allowNetworkAccess(int port) throws IOException {
-        userConnectServer = new SimpleAccessiblePlatServer(accessNodeList, listenerCollector, port, this);
-        userConnectServer.setClassType("MainMap");
-        new Thread(userConnectServer).start();
-
-        setState("NETWORK", StateConstant.NETWORK_READY);
-        return true;
-    }
-
-    @Override
-    public boolean isNetWorkAccessibleReady() {
-        //资源初始化后，则网络连接状态就绪
-        System.out.println(getState("NETWORK") == StateConstant.NETWORK_READY);
-        return getState("NETWORK") == StateConstant.NETWORK_READY;
     }
 
     @Override

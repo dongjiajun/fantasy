@@ -6,6 +6,10 @@ package com.fantasy.brace.message;
  * @author DongJiaJun
  */
 public class Message {
+
+    /**
+     * 携带信息
+     */
     private String message;
 
     public Message() {

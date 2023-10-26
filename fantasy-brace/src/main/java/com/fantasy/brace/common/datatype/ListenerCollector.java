@@ -1,9 +1,7 @@
 package com.fantasy.brace.common.datatype;
 
-import com.fantasy.brace.listener.event.FantasyEvent;
 import com.fantasy.brace.listener.listeners.FantasyListener;
 
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -12,5 +10,5 @@ import java.util.HashSet;
  *
  * @author DongJiaJun
  */
-public class ListenerCollector extends HashMap<String, HashSet<? extends FantasyListener>> {
+public class ListenerCollector extends HashMap<String, HashSet<FantasyListener>> {
 }
