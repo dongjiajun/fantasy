@@ -1,9 +1,8 @@
-package com.fantasy.brace.network;
+package com.fantasy.brace.network.server;
 
 
-import com.fantasy.brace.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
 import com.fantasy.brace.network.handler.UserConnectHandler;
-import com.fantasy.brace.network.server.AbstractPlatServer;
 
 import java.io.IOException;
 import java.net.Socket;

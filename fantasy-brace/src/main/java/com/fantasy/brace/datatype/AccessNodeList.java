@@ -1,4 +1,4 @@
-package com.fantasy.brace.common.datatype;
+package com.fantasy.brace.datatype;
 
 import java.net.Socket;
 import java.util.HashMap;

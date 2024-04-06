@@ -2,7 +2,7 @@ package com.fantasy.brace.common;
 
 import com.fantasy.brace.enumerate.StatusProtocolEnum;
 import com.fantasy.brace.enumerate.StatusValueEnum;
-import com.fantasy.brace.math.basic.NumberConvertUtils;
+import com.fantasy.brace.math.NumberConvertUtils;
 
 
 /**

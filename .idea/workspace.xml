@@ -4,31 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="第一次提交">
+    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="初始结构调整">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/ListenerCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/datatype/ListenerCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/CoordinateConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/CoordinateConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/StateConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/constant/StateConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusProtocolEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusProtocolEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractNetWorkAccessiblePlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractNetWorkAccessiblePlat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/readme.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/Graphic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractNetWorkAccessiblePlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractNetWorkAccessiblePlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractPlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/graphic/plat/AbstractPlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/NetWorkAccessible.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/NetWorkAccessible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimpleAccessiblePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/SimplePlatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/client/SimpleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/client/SimpleClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractAccessiblePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/exception/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/listener/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/test.puml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +39,30 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dongjiajun&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c0eedebb-932e-4033-b8f7-d13e25f1f992" />
+        <option name="url" value="https://github.com/dongjiajun/fantasy.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../Program Files/Java/jdk-11.0.14/lib/src.zip!/java.base/java/util/Arrays.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/rules/NetworkAccessProcessing.java" root0="FORCE_HIGHLIGHTING" />
@@ -62,8 +73,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.4-bin/apache-maven-3.8.4" />
         <option name="localRepository" value="D:\self_maven_conf\local" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.4-bin/apache-maven-3.8.4" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
         <option name="userSettingsFile" value="D:\self_maven_conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -79,7 +91,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.MapTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RoleTest.executor&quot;: &quot;Run&quot;,
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;JUnit.MapTest.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -87,15 +102,17 @@
     &quot;git-widget-placeholder&quot;: &quot;active&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Project/fantasy/fantasy-brace/src/main/java/com/fantasy/brace/common/coordinate&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Project/JavaTutorial&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.38390803&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -130,11 +147,11 @@
       </method>
     </configuration>
     <configuration name="NumberConvertUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fantasy.brace.math.basic.NumberConvertUtils" />
+      <option name="MAIN_CLASS_NAME" value="com.fantasy.brace.math.NumberConvertUtils" />
       <module name="fantasy-brace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fantasy.brace.math.basic.*" />
+          <option name="PATTERN" value="com.fantasy.brace.math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,10 +177,26 @@
       <module name="fantasy-brace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fantasy.brace.common.*" />
+          <option name="PATTERN" value="com.fantasy.brace.network.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fantasy-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fantasy.core.executable.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fantasy.core.executable.test" />
+      <option name="MAIN_CLASS_NAME" value="com.fantasy.core.executable.test.MapTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,11 +206,13 @@
       <item itemvalue="Application.Status" />
       <item itemvalue="Application.MapTest" />
       <item itemvalue="Application.RoleTest" />
+      <item itemvalue="JUnit.MapTest.test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RoleTest" />
         <item itemvalue="Application.MapTest" />
+        <item itemvalue="JUnit.MapTest.test" />
         <item itemvalue="Application.Status" />
         <item itemvalue="Application.NumberConvertUtils" />
       </list>
@@ -213,7 +248,46 @@
       <workItem from="1697871492119" duration="7107000" />
       <workItem from="1698023313593" duration="13118000" />
       <workItem from="1698107799909" duration="11196000" />
-      <workItem from="1698216242146" duration="9364000" />
+      <workItem from="1698216242146" duration="10076000" />
+      <workItem from="1698280950702" duration="19859000" />
+      <workItem from="1698332746280" duration="3185000" />
+      <workItem from="1698367306976" duration="2434000" />
+      <workItem from="1698714812765" duration="790000" />
+      <workItem from="1698800996277" duration="32000" />
+      <workItem from="1698801039738" duration="24000" />
+      <workItem from="1700559410705" duration="80000" />
+      <workItem from="1702545645905" duration="1668000" />
+      <workItem from="1703472093869" duration="9001000" />
+      <workItem from="1703560993108" duration="1336000" />
+      <workItem from="1703832588355" duration="1372000" />
+      <workItem from="1704336339145" duration="1731000" />
+      <workItem from="1704676231767" duration="1415000" />
+      <workItem from="1705317201602" duration="6514000" />
+      <workItem from="1705396352524" duration="3038000" />
+      <workItem from="1705453283602" duration="3449000" />
+      <workItem from="1705888657280" duration="7307000" />
+      <workItem from="1706063817225" duration="6163000" />
+      <workItem from="1708308441701" duration="15442000" />
+      <workItem from="1711003431075" duration="5200000" />
+      <workItem from="1711532621335" duration="3302000" />
+      <workItem from="1711536865663" duration="499000" />
+      <workItem from="1711537449513" duration="53000" />
+      <workItem from="1711537514548" duration="1231000" />
+      <workItem from="1711538760117" duration="566000" />
+      <workItem from="1711955670175" duration="6620000" />
+      <workItem from="1712053542703" duration="62000" />
+      <workItem from="1712053733705" duration="18000" />
+      <workItem from="1712054013492" duration="20000" />
+      <workItem from="1712054082559" duration="23000" />
+      <workItem from="1712054410938" duration="21000" />
+      <workItem from="1712054530081" duration="16000" />
+      <workItem from="1712237008797" duration="2542000" />
+      <workItem from="1712300932559" duration="6668000" />
+      <workItem from="1712393108753" duration="227000" />
+      <workItem from="1712393348041" duration="252000" />
+      <workItem from="1712393614237" duration="402000" />
+      <workItem from="1712394037376" duration="70000" />
+      <workItem from="1712394121060" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <option name="closed" value="true" />
@@ -223,13 +297,60 @@
       <option name="project" value="LOCAL" />
       <updated>1697877837310</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="初始结构调整">
+      <option name="closed" value="true" />
+      <created>1698227371256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698227371256</updated>
+    </task>
+    <task id="LOCAL-00003" summary="初始结构调整">
+      <option name="closed" value="true" />
+      <created>1698310980346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698310980346</updated>
+    </task>
+    <task id="LOCAL-00004" summary="初始结构调整">
+      <option name="closed" value="true" />
+      <created>1698311052323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698311052323</updated>
+    </task>
+    <task id="LOCAL-00005" summary="初始结构调整">
+      <option name="closed" value="true" />
+      <created>1703487978836</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703487978836</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/active" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -240,7 +361,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/active" />
                       </list>
                     </value>
                   </entry>
@@ -254,7 +375,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次提交" />
+    <MESSAGE value="初始结构调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始结构调整" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

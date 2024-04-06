@@ -1,9 +1,11 @@
-package com.fantasy.brace.graphic.plat;
+package com.fantasy.brace.applicable.graphic.plat;
 
 
+import com.fantasy.brace.common.Status;
+import com.fantasy.brace.datatype.ListenerCollector;
 import com.fantasy.brace.math.coordinate.CoordinateSystem;
 import com.fantasy.brace.math.coordinate.CoordinateSystem3D;
-import com.fantasy.brace.graphic.Graphic;
+import com.fantasy.brace.applicable.graphic.Graphic;
 
 /**
  * 抽象的地图
@@ -17,13 +19,24 @@ public abstract class AbstractPlat extends Graphic {
      */
     private CoordinateSystem coordinateSystem;
 
-    /**
-     * 无参构造，初始化坐标系，使用策略的方案
-     */
+
     public AbstractPlat() {
         this.coordinateSystem = new CoordinateSystem3D();
     }
 
+    public AbstractPlat(CoordinateSystem coordinateSystem) {
+        this.coordinateSystem = coordinateSystem;
+    }
+
+    public AbstractPlat(Status status, ListenerCollector listenerCollector, CoordinateSystem coordinateSystem) {
+        super(status, listenerCollector);
+        this.coordinateSystem = coordinateSystem;
+    }
+
+    public AbstractPlat(Status status, CoordinateSystem coordinateSystem) {
+        super(status);
+        this.coordinateSystem = coordinateSystem;
+    }
 
     /**
      * 获取坐标系实例

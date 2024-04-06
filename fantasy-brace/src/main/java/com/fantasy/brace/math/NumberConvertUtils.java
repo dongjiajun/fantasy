@@ -1,4 +1,4 @@
-package com.fantasy.brace.math.basic;
+package com.fantasy.brace.math;
 
 
 public class NumberConvertUtils {
