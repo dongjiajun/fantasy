@@ -11,7 +11,7 @@ public enum StatusValueEnum {
     NETWORK_READY(0b11, "NETWORK", "网络状态已就绪，允许联网"),
     LOAD_ORIGIN(0b00, "LOAD", "加载状态未初始化"),
     LOAD_NO_COMPLETE(0b01, "LOAD", "当前加载未完成"),
-    LOAD_COMPLETE(0b11, "LOAD", "已加载完毕");
+    LOAD_COMPLETE(0b11, "LOAD", "状态已加载完毕");
 
 
     /**

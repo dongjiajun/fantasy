@@ -97,6 +97,7 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
 
     @Override
     public void setAccessListener(AccessListener listener) {
+        // TODO : 泛型的处理仍需调整
         HashSet accessListeners = this.getListenerCollector().get("AccessListener");
         if (accessListeners == null) {
             accessListeners = new HashSet<AccessListener>();

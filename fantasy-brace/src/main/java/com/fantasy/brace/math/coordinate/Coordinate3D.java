@@ -2,6 +2,8 @@ package com.fantasy.brace.math.coordinate;
 
 import java.util.Objects;
 
+
+//todo 继承结构需要调整为继承自二维坐标系
 public class Coordinate3D extends Coordinate {
 
     private Integer x;
@@ -16,11 +18,10 @@ public class Coordinate3D extends Coordinate {
         this.y = y;
         this.z = z;
     }
-
     public void setX(Integer x) {
         this.x = x;
     }
-
+    
     public void setY(Integer y) {
         this.y = y;
     }
