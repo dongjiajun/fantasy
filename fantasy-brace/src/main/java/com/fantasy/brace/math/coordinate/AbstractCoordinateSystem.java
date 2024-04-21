@@ -10,12 +10,12 @@ import java.util.List;
  * @author DJJ
  */
 
-public abstract class AbstractCoordinateSystem implements CoordinateSystem {
+public abstract class AbstractCoordinateSystem<T extends AbstractCoordinatePoint> implements CoordinateSystem<T> {
 
     /**
      * The coordinate collector of this coordinate system.
      */
-    protected final List<Coordinate> collector;
+    protected final List<T> collector;
 
     /**
      * No parameter constructor of the class, initialize the coordinate collector.
@@ -25,60 +25,35 @@ public abstract class AbstractCoordinateSystem implements CoordinateSystem {
     }
 
     /**
-     * Verify that the current coordinates match dimensions.
-     *
-     * @param coordinate the coordinate
-     * @return a Boolean which signed the conclusion
-     */
-    protected abstract boolean validateType(Coordinate coordinate);
-
-    /**
      * verify that the current coordinates are legitimate coordinates.
      *
      * @param coordinate the coordinate
      * @return a Boolean which signed the conclusion
      */
-    protected abstract boolean validateCoordinate(Coordinate coordinate);
+    protected abstract boolean validateCoordinate(T t);
 
     @Override
-    public boolean add(Coordinate coordinate) {
-        if (validateType(coordinate)) {
-            if (validateCoordinate(coordinate)) {
-                if (!collector.contains(coordinate)) {
-                    return collector.add(coordinate);
-                }
+    public boolean add(T t) {
+        if (validateCoordinate(t)) {
+            if (!collector.contains(t)) {
+                return collector.add(t);
             }
         }
         return false;
     }
 
     @Override
-    public boolean addAll(Collection<? extends Coordinate> coordinates) {
-        for (Coordinate coordinate : coordinates) {
-            if (!add(coordinate)) {
-                return false;
-            }
-        }
-        return true;
+    public void addAll(Collection<T> collection) {
+        collection.forEach(this::add);
     }
 
     @Override
-    public boolean remove(Coordinate coordinate) {
-        return collector.remove(coordinate);
+    public boolean remove(T t) {
+        return collector.remove(t);
     }
 
     @Override
     public void removeAll() {
         collector.clear();
-    }
-
-    @Override
-    public void describe() {
-        if (collector.size() > 0) {
-            System.out.println("This is a coordinate system, contain these coordinate:");
-            collector.forEach(System.out::print);
-        } else {
-            System.out.println("This is a coordinate system, contain none coordinate now.");
-        }
     }
 }

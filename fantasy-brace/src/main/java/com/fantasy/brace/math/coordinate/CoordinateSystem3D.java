@@ -2,18 +2,80 @@ package com.fantasy.brace.math.coordinate;
 
 import com.fantasy.brace.constant.CoordinateConstant;
 
-public class CoordinateSystem3D extends CoordinateSystem2D {
 
+public class CoordinateSystem3D extends AbstractCoordinateSystem<CoordinatePoint3D> {
+
+    /**
+     * 三维坐标系 x 轴边界
+     */
+    private Integer boundX;
+
+    /**
+     * 三维坐标系 y 轴边界
+     */
+    private Integer boundY;
+
+    /**
+     * 三维坐标系 z 轴边界
+     */
     private Integer boundZ;
 
+    /**
+     * x 坐标缩放比
+     */
+    private Integer ratioX;
+
+    /**
+     * y 坐标缩放比
+     */
+    private Integer ratioY;
+
+    /**
+     * z 坐标缩放比
+     */
     private Integer ratioZ;
 
 
     public CoordinateSystem3D() {
-        super();
+        setBoundX(10);
+        setBoundY(10);
         setBoundZ(10);
+        setRatioX(100);
+        setRatioY(100);
         setRatioZ(100);
 
+    }
+
+    public Integer getBoundX() {
+        return boundX;
+    }
+
+    public void setBoundX(Integer boundX) {
+        this.boundX = boundX;
+    }
+
+    public Integer getBoundY() {
+        return boundY;
+    }
+
+    public void setBoundY(Integer boundY) {
+        this.boundY = boundY;
+    }
+
+    public Integer getRatioX() {
+        return ratioX;
+    }
+
+    public void setRatioX(Integer pixelsX) {
+        this.ratioX = boundX != 0 ? pixelsX / boundX : 1;
+    }
+
+    public Integer getRatioY() {
+        return ratioY;
+    }
+
+    public void setRatioY(Integer pixelsY) {
+        this.ratioY = boundY != 0 ? pixelsY / boundY : 1;
     }
 
     public Integer getBoundZ() {
@@ -34,28 +96,22 @@ public class CoordinateSystem3D extends CoordinateSystem2D {
     }
 
     public CoordinateSystem3D(Integer boundX, Integer boundY, Integer boundZ, Integer pixelsX, Integer pixelsY, Integer pixelsZ) {
-        super(boundX, boundY, pixelsX, pixelsY);
+        setBoundX(boundX);
+        setBoundY(boundY);
+        setRatioX(pixelsX);
+        setRatioY(pixelsY);
         setBoundZ(boundZ);
         setRatioZ(pixelsZ);
     }
 
     @Override
-    protected boolean validateType(Coordinate coordinate) {
-        return coordinate instanceof Coordinate3D;
-    }
-
-    @Override
-    protected boolean validateCoordinate(Coordinate coordinate) {
-        if (this.validateType(coordinate)) {
-            Coordinate3D real = (Coordinate3D) coordinate;
-            return real.getX() >= 0
-                    && real.getX() < getBoundX()
-                    && real.getY() >= 0
-                    && real.getY() < getBoundY()
-                    && real.getZ() >= 0
-                    && real.getZ() < getBoundZ();
-        }
-        return false;
+    protected boolean validateCoordinate(CoordinatePoint3D coordinatePoint3D) {
+        return coordinatePoint3D.getX() >= 0
+                && coordinatePoint3D.getX() < getBoundX()
+                && coordinatePoint3D.getY() >= 0
+                && coordinatePoint3D.getY() < getBoundY()
+                && coordinatePoint3D.getZ() >= 0
+                && coordinatePoint3D.getZ() < getBoundZ();
     }
 
     @Override
@@ -87,12 +143,11 @@ public class CoordinateSystem3D extends CoordinateSystem2D {
 
     @Override
     public boolean setBounds(Integer... axis) {
-        super.setBounds(axis);
 
-        if (axis != null && axis.length >= 3) {
+        if (axis != null && axis.length == 3) {
+            setBoundX(axis[0]);
+            setBoundY(axis[1]);
             setBoundZ(axis[2]);
-
-            return true;
         }
 
         return false;
@@ -104,21 +159,21 @@ public class CoordinateSystem3D extends CoordinateSystem2D {
      * @param coordinates 以字符串作为表现形式描述的坐标
      * @return 解析后生成的坐标值
      */
-    public static Coordinate3D getCoordinates3DFrom(String coordinates) {
+    public static CoordinatePoint3D getCoordinates3DFrom(String coordinates) {
         if (coordinates != null) {
             String[] tmp = coordinates.trim().split(",");
-            Coordinate3D res;
+            CoordinatePoint3D res;
 
             if (tmp.length == CoordinateConstant.THREE) {
                 try {
-                    res = new Coordinate3D(Integer.parseInt(tmp[0]), Integer.parseInt(tmp[1]), Integer.parseInt(tmp[2]));
+                    res = new CoordinatePoint3D(Integer.parseInt(tmp[0]), Integer.parseInt(tmp[1]), Integer.parseInt(tmp[2]));
                 } catch (NumberFormatException nfe) {
-                    return new Coordinate3D(-1, -1, -1);
+                    return new CoordinatePoint3D(-1, -1, -1);
                 }
                 return res;
             }
         }
-        return new Coordinate3D(-1, -1, -1);
+        return new CoordinatePoint3D(-1, -1, -1);
     }
 
     /**

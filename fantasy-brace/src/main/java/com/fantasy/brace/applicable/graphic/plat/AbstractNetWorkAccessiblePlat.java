@@ -1,17 +1,16 @@
 package com.fantasy.brace.applicable.graphic.plat;
 
 
-import com.fantasy.brace.common.Status;
 import com.fantasy.brace.datatype.AccessNodeList;
-import com.fantasy.brace.datatype.ListenerCollector;
+import com.fantasy.brace.listener.listeners.FantasyListener;
 import com.fantasy.brace.network.NetworkAccessProcessing;
 import com.fantasy.brace.constant.StateConstant;
 import com.fantasy.brace.listener.ConfigAccessListener;
 import com.fantasy.brace.listener.event.FantasyEvent;
 import com.fantasy.brace.listener.listeners.AccessListener;
-import com.fantasy.brace.math.coordinate.CoordinateSystem;
 import com.fantasy.brace.network.NetWorkAccessible;
-import com.fantasy.brace.network.server.SimplePlatServer;
+import com.fantasy.brace.network.server.AbstractServer;
+import com.fantasy.brace.network.server.SimpleNetWorkAccessiblePlatServer;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -31,26 +30,11 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
     /**
      * 管理连接的服务器
      */
-    protected SimplePlatServer userConnectServer;
+    protected AbstractServer userConnectServer;
 
 
     public AbstractNetWorkAccessiblePlat() {
         accessNodeList = new AccessNodeList();
-    }
-
-    public AbstractNetWorkAccessiblePlat(int port) throws IOException {
-        accessNodeList = new AccessNodeList();
-        userConnectServer = new SimplePlatServer(port, this, this.getClass().getSimpleName());
-    }
-
-    public AbstractNetWorkAccessiblePlat(Status status, CoordinateSystem coordinateSystem, AccessNodeList accessNodeList) {
-        super(status, coordinateSystem);
-        this.accessNodeList = accessNodeList;
-    }
-
-    public AbstractNetWorkAccessiblePlat(Status status, ListenerCollector listenerCollector, CoordinateSystem coordinateSystem, AccessNodeList accessNodeList) {
-        super(status, listenerCollector, coordinateSystem);
-        this.accessNodeList = accessNodeList;
     }
 
     /**
@@ -98,9 +82,9 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
     @Override
     public void setAccessListener(AccessListener listener) {
         // TODO : 泛型的处理仍需调整
-        HashSet accessListeners = this.getListenerCollector().get("AccessListener");
+        HashSet<FantasyListener> accessListeners = this.getListenerCollector().get("AccessListener");
         if (accessListeners == null) {
-            accessListeners = new HashSet<AccessListener>();
+            accessListeners = new HashSet<>();
             getListenerCollector().put("AccessListener", accessListeners);
         }
         accessListeners.add(listener);
@@ -109,7 +93,7 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
 
     @Override
     public void removeAccessListener(AccessListener listener) {
-        HashSet userConnectListeners = this.getListenerCollector().get("AccessListener");
+        HashSet<FantasyListener> userConnectListeners = this.getListenerCollector().get("AccessListener");
         if (userConnectListeners == null) {
             return;
         }
@@ -129,10 +113,9 @@ public abstract class AbstractNetWorkAccessiblePlat extends AbstractPlat impleme
     @Override
     public synchronized void allowNetworkAccess(int port) throws IOException {
         if (userConnectServer == null) {
-            userConnectServer = new SimplePlatServer(port, this, this.getClass().getSimpleName());
-            userConnectServer.setClassType(this.getClass().getSimpleName());
-            setState("NETWORK", StateConstant.NETWORK_READY);
+            userConnectServer = new SimpleNetWorkAccessiblePlatServer(port, this, this.getClass().getSimpleName());
         }
+        setState("NETWORK", StateConstant.NETWORK_READY);
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.Collection;
  *
  * @author DJJ
  */
-public interface CoordinateSystem {
+public interface CoordinateSystem<T extends AbstractCoordinatePoint> {
 
     /**
      * Add a coordinate into this coordinate system.
@@ -15,7 +15,7 @@ public interface CoordinateSystem {
      * @param coordinate the coordinate
      * @return a Boolean which signed execute state of this method
      */
-    boolean add(Coordinate coordinate);
+    boolean add(T t);
 
     /**
      * Add a set of coordinates into this coordinate system.
@@ -23,7 +23,7 @@ public interface CoordinateSystem {
      * @param coordinates a set of coordinates
      * @return a Boolean which signed execute state of this method
      */
-    boolean addAll(Collection<? extends Coordinate> coordinates);
+    void addAll(Collection<T> collection);
 
     /**
      * Remove a specified coordinate from this coordinate system.
@@ -31,7 +31,7 @@ public interface CoordinateSystem {
      * @param coordinate the coordinate
      * @return a Boolean which signed execute state of this method
      */
-    boolean remove(Coordinate coordinate);
+    boolean remove(T t);
 
     /**
      * Remove all coordinate from this coordinate system.

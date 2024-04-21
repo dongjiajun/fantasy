@@ -1,9 +1,11 @@
 package com.fantasy.brace.network.handler;
 
 
+import com.fantasy.brace.math.coordinate.Coordinate;
+import com.fantasy.brace.math.coordinate.CoordinateSystem;
 import com.fantasy.brace.network.NetworkAccessProcessing;
 import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
-import com.fantasy.brace.math.coordinate.Coordinate3D;
+import com.fantasy.brace.math.coordinate.CoordinatePoint3D;
 import com.fantasy.brace.math.coordinate.CoordinateSystem3D;
 
 import java.io.*;
@@ -20,26 +22,29 @@ public class UserConnectHandler extends ConnectHandler {
     /**
      * 套接字
      */
-    private Socket sock;
+    private final Socket sock;
 
     /**
      * 接入类的身份标识
      */
-    private String identification;
+    private final String identification;
 
     /**
      * 接入类（只关注网络向的功能定义）
      */
-    private NetworkAccessProcessing networkAccessProcessing;
+    private final NetworkAccessProcessing networkAccessProcessing;
 
-    private AbstractNetWorkAccessiblePlat plat;
+    /**
+     * 坐标处理类（只关注坐标处理向的功能定义）
+     */
+    private Coordinate<?> coordinate;
 
     public UserConnectHandler(Socket sock, String identification, NetworkAccessProcessing networkAccessProcessing,
-                              AbstractNetWorkAccessiblePlat plat) {
+                              Coordinate<?> coordinate) {
         this.sock = sock;
         this.identification = identification;
         this.networkAccessProcessing = networkAccessProcessing;
-        this.plat = plat;
+        this.coordinate = coordinate;
     }
 
     @Override
@@ -87,14 +92,20 @@ public class UserConnectHandler extends ConnectHandler {
             switch (parseInput(s)) {
                 //case 0 是用于测试的分支，时间原因，暂时测试还没有做完
                 case 0:
-                    Coordinate3D coordinates = CoordinateSystem3D.getCoordinates3DFrom(s);
-                    if (plat.getCoordinateSystem().add(coordinates)) {
-                        System.out.println("(" + sock.getRemoteSocketAddress() + ")的位置是" + coordinates);
-                    } else {
-                        System.out.println("(" + sock.getRemoteSocketAddress() + ")尝试设置违法坐标.");
+                    CoordinatePoint3D coordinates = CoordinateSystem3D.getCoordinates3DFrom(s);
+                    CoordinateSystem<?> coordinateSystem = coordinate.getCoordinateSystem();
+                    if(coordinateSystem instanceof CoordinateSystem3D){
+                        CoordinateSystem3D coordinateSystem3D = (CoordinateSystem3D) coordinateSystem;
+
+                        if (coordinateSystem3D.add(coordinates)) {
+                            System.out.println("(" + sock.getRemoteSocketAddress() + ")的位置是" + coordinates);
+                        } else {
+                            System.out.println("(" + sock.getRemoteSocketAddress() + ")尝试设置违法坐标.");
+                        }
+                        writer.write("服务器已成功解析提交" + "\n");
+                        writer.flush();
                     }
-                    writer.write("服务器已成功解析提交" + "\n");
-                    writer.flush();
+
                     break;
                 default:
                     writer.write("下达的指令是:" + s + "\n");

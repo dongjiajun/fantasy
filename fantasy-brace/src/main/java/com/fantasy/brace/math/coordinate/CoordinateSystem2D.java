@@ -5,7 +5,7 @@ package com.fantasy.brace.math.coordinate;
  *
  * @author DJJ
  */
-public class CoordinateSystem2D extends AbstractCoordinateSystem {
+public class CoordinateSystem2D extends AbstractCoordinateSystem<CoordinatePoint2D> {
 
     /**
      * 二维坐标系 x 轴边界
@@ -29,33 +29,22 @@ public class CoordinateSystem2D extends AbstractCoordinateSystem {
 
 
     public CoordinateSystem2D() {
-        super();
         setBoundX(10);
         setBoundY(10);
         setRatioX(100);
         setRatioY(100);
     }
 
+    @Override
+    protected boolean validateCoordinate(CoordinatePoint2D coordinatePoint2D) {
+        return coordinatePoint2D.getX() >= 0 && coordinatePoint2D.getX() < boundX && coordinatePoint2D.getY() >= 0 && coordinatePoint2D.getY() < boundY;
+    }
+
     public CoordinateSystem2D(Integer boundX, Integer boundY, Integer pixelsX, Integer pixelsY) {
-        super();
         setBoundX(boundX);
         setBoundY(boundY);
         setRatioX(pixelsX);
         setRatioY(pixelsY);
-    }
-
-    @Override
-    protected boolean validateType(Coordinate coordinate) {
-        return coordinate instanceof Coordinate2D;
-    }
-
-    @Override
-    protected boolean validateCoordinate(Coordinate coordinate) {
-        if (validateType(coordinate)) {
-            Coordinate2D real = (Coordinate2D) coordinate;
-            return real.getX() >= 0 && real.getX() < boundX && real.getY() >= 0 && real.getY() < boundY;
-        }
-        return false;
     }
 
     @Override

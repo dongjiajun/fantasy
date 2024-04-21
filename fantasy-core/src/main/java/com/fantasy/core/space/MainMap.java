@@ -1,6 +1,7 @@
 package com.fantasy.core.space;
 
 
+import com.fantasy.brace.applicable.graphic.plat.Abstract3DPlat;
 import com.fantasy.brace.constant.StateConstant;
 import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
 import com.fantasy.brace.listener.event.FantasyEvent;
@@ -15,7 +16,7 @@ import java.util.HashMap;
  *
  * @author DongJiaJun
  */
-public class MainMap extends AbstractNetWorkAccessiblePlat {
+public class MainMap extends Abstract3DPlat {
 
     private static MainMap mainMap;
 

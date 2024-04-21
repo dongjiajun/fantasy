@@ -1,36 +1,24 @@
 package com.fantasy.brace.network.server;
 
-
 import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.math.coordinate.Coordinate;
 import com.fantasy.brace.network.handler.UserConnectHandler;
 
 import java.io.IOException;
 import java.net.Socket;
 
-/**
- * 简单的图连接服务器
- *
- * @author DongJiaJun
- */
-public class SimplePlatServer extends AbstractPlatServer {
+public class SimpleCoordinatePlatServer extends SimpleNetWorkAccessiblePlatServer {
 
-    private String classType;
+    private Coordinate<?> coordinate;
 
-    public String getClassType() {
-        return classType;
+
+    public SimpleCoordinatePlatServer(int port, AbstractNetWorkAccessiblePlat netWorkAccessiblePlat, String classType, Coordinate<?> coordinate) throws IOException {
+        super(port, netWorkAccessiblePlat, classType);
+        this.coordinate = coordinate;
     }
 
-    public void setClassType(String classType) {
-        this.classType = classType;
-    }
-
-    public SimplePlatServer(int port, AbstractNetWorkAccessiblePlat netWorkAccessiblePlat, String classType) throws IOException {
-        super(port, netWorkAccessiblePlat);
-        setClassType(classType);
-    }
-
-    public SimplePlatServer(String classType) throws IOException {
-        setClassType(classType);
+    public Coordinate<?> getCoordinate() {
+        return coordinate;
     }
 
     private void execute() throws IOException {
@@ -40,9 +28,9 @@ public class SimplePlatServer extends AbstractPlatServer {
             if (getNetWorkAccessiblePlat().addIntoAccessList(sock.getInetAddress().toString() + ":" + sock.getPort(), sock)) {
                 // TODO: 2023/9/30 待替换为统一的池模式处理，不允许独立开线程，以方便资源管理 ...
                 new Thread(new UserConnectHandler(sock,
-                        classType,
+                        getClassType(),
                         getNetWorkAccessiblePlat(),
-                        getNetWorkAccessiblePlat())).start();
+                        coordinate)).start();
             } else {
                 System.out.println("注册用户到连接监听过程中异常");
             }
@@ -57,6 +45,4 @@ public class SimplePlatServer extends AbstractPlatServer {
             e.printStackTrace();
         }
     }
-
 }
-

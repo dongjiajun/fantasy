@@ -28,23 +28,17 @@ public abstract class Graphic implements ConfigStateListener {
     private final ListenerCollector listenerCollector;
 
 
+    public Status getStatus() {
+        return status;
+    }
+
     public ListenerCollector getListenerCollector() {
         return listenerCollector;
     }
 
-    public Graphic() {
+    protected Graphic() {
         status = new Status();
         listenerCollector = new ListenerCollector();
-    }
-
-    public Graphic(Status status) {
-        this.status = status;
-        listenerCollector = new ListenerCollector();
-    }
-
-    public Graphic(Status status, ListenerCollector listenerCollector) {
-        this.status = status;
-        this.listenerCollector = listenerCollector;
     }
 
     /**
@@ -118,7 +112,7 @@ public abstract class Graphic implements ConfigStateListener {
      * 移除所有监听器
      */
     protected final void removeAllListeners() {
-        if (listenerCollector == null || listenerCollector.isEmpty()) {
+        if (listenerCollector.isEmpty()) {
             return;
         }
         listenerCollector.clear();

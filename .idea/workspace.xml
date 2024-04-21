@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="初始结构调整">
+    <list default="true" id="dadf6871-0ff2-4c20-970c-c0bb079cf1ea" name="Changes" comment="待增部分规范调整">
+      <change afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/Abstract3DPlat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinatePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/SimpleCoordinatePlatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/Graphic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractNetWorkAccessiblePlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractNetWorkAccessiblePlat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/common/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/enumerate/StatusValueEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/exception/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/listener/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/message/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fantasy-brace/test.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractPlat.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/graphic/plat/AbstractPlat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/organism/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/applicable/organism/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/AbstractCoordinateSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinatePoint2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/Coordinate3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinatePoint3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/math/coordinate/CoordinateSystem3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/handler/UserConnectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/AbstractPlatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/SimplePlatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-brace/src/main/java/com/fantasy/brace/network/server/SimpleNetWorkAccessiblePlatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/executable/test/MapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/fantasy-core/src/main/java/com/fantasy/core/space/MainMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +38,7 @@
       <list>
         <option value="UML Class" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -76,6 +88,7 @@
         <option name="customMavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.4-bin/apache-maven-3.8.4" />
         <option name="localRepository" value="D:\self_maven_conf\local" />
         <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="useMavenConfig" value="false" />
         <option name="userSettingsFile" value="D:\self_maven_conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -95,6 +108,8 @@
     &quot;Application.RoleTest.executor&quot;: &quot;Run&quot;,
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;JUnit.MapTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.fantasy-brace [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.fantasy-brace [install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -112,7 +127,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.38390803&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -210,8 +225,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RoleTest" />
         <item itemvalue="Application.MapTest" />
+        <item itemvalue="Application.RoleTest" />
         <item itemvalue="JUnit.MapTest.test" />
         <item itemvalue="Application.Status" />
         <item itemvalue="Application.NumberConvertUtils" />
@@ -288,6 +303,30 @@
       <workItem from="1712393614237" duration="402000" />
       <workItem from="1712394037376" duration="70000" />
       <workItem from="1712394121060" duration="145000" />
+      <workItem from="1712495759104" duration="32000" />
+      <workItem from="1712495803589" duration="1999000" />
+      <workItem from="1712538560447" duration="6604000" />
+      <workItem from="1712647076596" duration="7270000" />
+      <workItem from="1712666881003" duration="302000" />
+      <workItem from="1712667202708" duration="869000" />
+      <workItem from="1712668095276" duration="311000" />
+      <workItem from="1712668443926" duration="306000" />
+      <workItem from="1712668770986" duration="600000" />
+      <workItem from="1712669389916" duration="1101000" />
+      <workItem from="1712671595399" duration="96000" />
+      <workItem from="1712671707562" duration="179000" />
+      <workItem from="1712671968124" duration="510000" />
+      <workItem from="1712672497242" duration="2233000" />
+      <workItem from="1712714952315" duration="1201000" />
+      <workItem from="1712716182457" duration="389000" />
+      <workItem from="1712716581711" duration="225000" />
+      <workItem from="1712716848261" duration="83000" />
+      <workItem from="1712716961885" duration="347000" />
+      <workItem from="1712717327027" duration="313000" />
+      <workItem from="1712717695368" duration="136000" />
+      <workItem from="1712717848221" duration="8546000" />
+      <workItem from="1713242830101" duration="14000" />
+      <workItem from="1713681140372" duration="25322000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <option name="closed" value="true" />

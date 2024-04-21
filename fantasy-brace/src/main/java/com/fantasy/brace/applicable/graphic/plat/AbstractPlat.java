@@ -14,38 +14,6 @@ import com.fantasy.brace.applicable.graphic.Graphic;
  */
 public abstract class AbstractPlat extends Graphic {
 
-    /**
-     * 拥有一个三维坐标系
-     */
-    private CoordinateSystem coordinateSystem;
-
-
-    public AbstractPlat() {
-        this.coordinateSystem = new CoordinateSystem3D();
-    }
-
-    public AbstractPlat(CoordinateSystem coordinateSystem) {
-        this.coordinateSystem = coordinateSystem;
-    }
-
-    public AbstractPlat(Status status, ListenerCollector listenerCollector, CoordinateSystem coordinateSystem) {
-        super(status, listenerCollector);
-        this.coordinateSystem = coordinateSystem;
-    }
-
-    public AbstractPlat(Status status, CoordinateSystem coordinateSystem) {
-        super(status);
-        this.coordinateSystem = coordinateSystem;
-    }
-
-    /**
-     * 获取坐标系实例
-     *
-     * @return 坐标系
-     */
-    public CoordinateSystem getCoordinateSystem() {
-        return this.coordinateSystem;
-    }
 
     /**
      * 初始化图

@@ -1,6 +1,6 @@
 package com.fantasy.brace.applicable.organism;
 
-import com.fantasy.brace.math.coordinate.Coordinate3D;
+import com.fantasy.brace.math.coordinate.CoordinatePoint3D;
 import com.fantasy.brace.network.NetWorked;
 import com.fantasy.brace.network.client.SimpleClient;
 
@@ -34,7 +34,7 @@ public abstract class Role implements NetWorked {
     /**
      * 坐标
      */
-    private Coordinate3D coordinates;
+    private CoordinatePoint3D coordinates;
 
     /**
      * 所在的地区（地图），同步数据到服务器时要使用
@@ -50,15 +50,15 @@ public abstract class Role implements NetWorked {
         this.site = site;
     }
 
-    public void setCoordinates(Coordinate3D coordinates) {
+    public void setCoordinates(CoordinatePoint3D coordinates) {
         this.coordinates = coordinates;
     }
 
     public void setCoordinates(int x, int y, int z) {
-        this.coordinates = new Coordinate3D(x, y, z);
+        this.coordinates = new CoordinatePoint3D(x, y, z);
     }
 
-    public Coordinate3D getCoordinates() {
+    public CoordinatePoint3D getCoordinates() {
         return this.coordinates;
     }
 

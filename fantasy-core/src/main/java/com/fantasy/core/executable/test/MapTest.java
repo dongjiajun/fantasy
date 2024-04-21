@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class MapTest {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         MainMap om = MainMap.getInstance();
 
         om.setAccessListener((FantasyEvent eventObject) -> System.out.println(eventObject.getExtraStatement()));

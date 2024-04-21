@@ -2,6 +2,7 @@ package com.fantasy.brace.network.server;
 
 
 import com.fantasy.brace.applicable.graphic.plat.AbstractNetWorkAccessiblePlat;
+import com.fantasy.brace.applicable.graphic.plat.AbstractPlat;
 
 import java.io.IOException;
 
@@ -13,28 +14,25 @@ import java.io.IOException;
 public abstract class AbstractPlatServer extends AbstractServer {
 
     /**
-     * 可联网的地图
+     * 地图
      */
-    private AbstractNetWorkAccessiblePlat netWorkAccessiblePlat;
+    private AbstractPlat plat;
 
-    public AbstractPlatServer() {
-        netWorkAccessiblePlat = null;
+
+    protected AbstractPlatServer() {
+        plat = null;
     }
 
-    public AbstractPlatServer(AbstractNetWorkAccessiblePlat netWorkAccessiblePlat) {
-        this.netWorkAccessiblePlat = netWorkAccessiblePlat;
-    }
-
-    public AbstractPlatServer(int port, AbstractNetWorkAccessiblePlat netWorkAccessiblePlat) throws IOException {
+    public AbstractPlatServer(int port, AbstractPlat plat) throws IOException {
         super(port);
-        this.netWorkAccessiblePlat = netWorkAccessiblePlat;
+        this.plat = plat;
     }
 
-    public AbstractNetWorkAccessiblePlat getNetWorkAccessiblePlat() {
-        return netWorkAccessiblePlat;
+    protected AbstractPlat getPlat() {
+        return plat;
     }
 
-    protected void setNetWorkAccessiblePlat(AbstractNetWorkAccessiblePlat netWorkAccessiblePlat) {
-        this.netWorkAccessiblePlat = netWorkAccessiblePlat;
+    protected void setPlat(AbstractPlat plat) {
+        this.plat = plat;
     }
 }

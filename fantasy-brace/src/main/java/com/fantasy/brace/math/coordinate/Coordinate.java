@@ -1,8 +1,7 @@
 package com.fantasy.brace.math.coordinate;
 
-/**
- * 坐标点
- */
-public abstract class Coordinate {
 
+public interface Coordinate<T extends CoordinateSystem<?>> {  //T extends CoordinateSystem<? extends AbstractCoordinatePoint>
+
+    public T getCoordinateSystem();
 }

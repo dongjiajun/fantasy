@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author DJJ
  */
-public class Coordinate2D extends Coordinate {
+public class CoordinatePoint2D extends AbstractCoordinatePoint {
     /**
      * 二维中的 x 坐标
      */
@@ -19,7 +19,9 @@ public class Coordinate2D extends Coordinate {
     private Integer y;
 
 
-    public Coordinate2D(Integer x, Integer y) {
+    public CoordinatePoint2D(){};
+
+    public CoordinatePoint2D(Integer x, Integer y) {
         this.x = x;
         this.y = y;
     }
@@ -54,7 +56,7 @@ public class Coordinate2D extends Coordinate {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Coordinate2D that = (Coordinate2D) o;
+        CoordinatePoint2D that = (CoordinatePoint2D) o;
         return x.equals(that.x) && y.equals(that.y);
     }
 
